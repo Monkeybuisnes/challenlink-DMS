@@ -39,3 +39,37 @@ is a legendary item and as such its Quality is 80 and it never alters.
 1. Refactor the monstrous code in the `GildedRose.php` class.
 2. Add a new item type, "Conjured". The specs for this item are commented out in the `GildedRoseSpec.php` file.
 
+## Resolve
+
+Key Improvements Made:
+1. Refactored Monolithic Code
+Broke down the complex tick() method into focused, single-responsibility methods
+Each item type now has its own handler method
+Eliminated deeply nested conditionals
+
+2. Added Conjured Item Support
+Conjured items degrade twice as fast as normal items
+Before sell date: -2 quality per day
+After sell date: -4 quality per day
+
+3. Applied SOLID Principles
+Single Responsibility: Each method has one clear purpose
+Open/Closed: Easy to add new item types without modifying existing code
+Dependency Inversion: Logic is abstracted into clear helper methods
+
+4. Improved Maintainability
+Clear naming: Method names describe exactly what they do
+No code duplication: Quality bounds checking is centralized
+Easy to test: Each item type can be tested in isolation
+Easy to extend: Adding new item types requires minimal changes
+
+5. Preserved All Existing Behavior
+All original tests pass
+Business rules remain unchanged
+No breaking changes to the public API
+
+6. Quality Bounds Management
+increaseQuality() and decreaseQuality() methods ensure quality stays within [0, 50]
+Sulfuras remains unchanged (quality and sellIn never change)
+
+The refactored code is now much more readable, maintainable, and extensible while preserving all the original functionality and adding the new Conjured item feature.

@@ -21,3 +21,37 @@ Output: aksfaje
 Input: array("aaffhkksemckelloe", "fhea")
 Output: affhkkse
 ```
+
+## Resolution
+
+How it works:
+
+Character frequency counting: Count how many times each character appears in K using array_count_values()
+Sliding window technique:
+
+Expand the right pointer to include more characters
+Contract the left pointer when we have a valid window
+
+
+Window validation: Track when our current window contains all required characters with correct frequencies
+Optimization: When we find a valid window, try to shrink it from the left to find the minimum size
+Result tracking: Keep track of the smallest valid window found
+
+Test with the examples:
+
+Input: ["ahffaksfajeeubsne", "jefaa"]
+
+K = "jefaa" needs: j=1, e=1, f=1, a=2
+Output: "aksfaje" (contains all required characters)
+
+
+Input: ["aaffhkksemckelloe", "fhea"]
+
+K = "fhea" needs: f=1, h=1, e=1, a=1
+Output: "affhkkse" (smallest substring containing f, h, e, a)
+
+
+
+Time Complexity: O(|N| + |K|) where |N| and |K| are the lengths of strings N and K
+Space Complexity: O(|K|) for storing character frequencies
+This sliding window approach efficiently finds the minimum window substring in linear time.

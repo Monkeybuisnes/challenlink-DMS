@@ -19,3 +19,9 @@
 
 - Upload your solutions to a public repository in GitHub or a similar service.
 - Share your repository link with us by email to erick@medlink.la
+
+
+## Finishing doc
+
+- finished by :  Daniel Monterroza Sierra
+- date : Monday, 26th of May, 2025
